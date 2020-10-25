@@ -45,4 +45,4 @@ Ruby on Rails 5.2.4.4
 ------------
 >Herokuアプリのアドレスは、下記URLの形でアクセスできる。
 
->https://アプリ名.herokuapp.com/
+>https://アプリ名.herokuapp.com/ 
