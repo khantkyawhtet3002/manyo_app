@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="view_title">
-    <h1>Sign up</h1>
+    <h1>サインアップ</h1>
   </div>
   <div class="new_style">
     <% if @user.errors.any? %>
@@ -15,22 +15,22 @@
     <% end %>
     <%= form_with(model: @user, local: true) do |f| %>
     <div class="user_name">
-      <%= f.label :name %>
+      <%= f.label :名前 %>
       <%= f.text_field :name %>
     </div>
       <br>
     <div class="user_email">
-      <%= f.label :email %>
+      <%= f.label :メールアドレス %>
       <%= f.email_field :email %>
     </div>
       <br>
     <div class="user_password">
-      <%= f.label :password %>
+      <%= f.label :パスワード %>
       <%= f.password_field :password %>
     </div>
       <br>
     <div class="user_password_confirmation">
-      <%= f.label :password_confirmation %>
+      <%= f.label :パスワード確認 %>
       <%= f.password_field :password_confirmation %>
     </div>
       <br>
