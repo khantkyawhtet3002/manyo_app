@@ -89,7 +89,6 @@ RSpec.describe 'タスク管理機能', type: :system do
          visit task_path(task_id)
          expect(page).to have_content 'dive_text'
          expect(page).to have_content 'submit task'
-
        end
      end
   end
