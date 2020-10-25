@@ -42,4 +42,4 @@ RSpec.describe 'scope検索', type: :model do
       expect(Task.title_search('万葉').status_search('完了').count).to eq 1
     end
   end
-end 
+end
