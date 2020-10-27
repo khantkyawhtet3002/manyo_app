@@ -17,12 +17,18 @@
                admin: admin,
               )
 end
+User.create!(name:  "khantkyawhtet",
+             email: "khantkyawhtet@gmail.com",
+             password:  "1234567890",
+             password_confirmation: "1234567890",
+             admin: true
+            )
 User.create!(name:  "pokemon",
              email: "pokemon@gmail.com",
              password:  "111111",
              password_confirmation: "111111",
              admin: true
-            )
+              )
 User.create(name: "sample" ,
             email: "sample@gmail.com",
             password: "09090909",
