@@ -13,4 +13,4 @@ FactoryBot.define do
     status { '完了' }
     priority { '中' }
   end
-end 
+end
