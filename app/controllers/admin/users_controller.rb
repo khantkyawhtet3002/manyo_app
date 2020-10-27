@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :if_not_admin, only: [ :index, :edit, :update, :destroy]
+  before_action :set_admin
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
@@ -12,15 +12,13 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to admin_user_path(@user.id), notice: "ユーザーを作成しました"
-    else
-      render :new
-    end
+  @user = User.new(user_params)
+  if @user.save
+    redirect_to admin_users_path, notice: "#{@user.name}を追加しました。"
+  else
+    render :new
   end
+end
 
   def show
     @tasks = @user.tasks
@@ -47,10 +45,14 @@ class Admin::UsersController < ApplicationController
 
   private
 
-  def if_not_admin
-    unless current_user.admin?
-      flash[:notice] = 'あなたは管理者ではありません'
-      redirect_to root_path
+  def set_admin
+    user = current_user
+    if user.nil?
+      redirect_to tasks_path, notice: 'あなたは管理者ではありません'
+    else
+      if user.admin == false
+        redirect_to new_session_path, notice: 'あなたは管理者ではありません'
+      end
     end
   end
 
