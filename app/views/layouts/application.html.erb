@@ -27,9 +27,6 @@
           <%= link_to "Sign up", new_user_path, class: "btn btn-info" %>
           <%= link_to "Login", new_session_path, class: "btn btn-info" %>
         <% end %>
-        <% if logged_in? %>
-        <%= link_to "Task list", tasks_path, class: "btn btn-info" %>
-      <% end %>
       </div>
       <%= yield %>
     </body>
