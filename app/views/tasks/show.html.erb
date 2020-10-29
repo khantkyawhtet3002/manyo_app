@@ -6,6 +6,13 @@
     <p>タスク名: <%= @task.title %></p>
     <p>タスク詳細: <%= @task.content %></p>
     <p>終了期限：<%= @task.deadline.strftime("%Y年%m月%d日") if @task.deadline.present? %></p>
-    <%= link_to 'タスク一覧画面に戻る', tasks_path %>
+    <p><%= @task.status %></p>
+    <p><%= @task.priority %></p>
+    <p class="btn-sticky">
+      <% @task.labels.each do |label| %>
+        <%= label.name %>
+      <% end %>
+    </p><br>
+    <%= link_to 'タスク一覧画面に戻る', tasks_path, class: "btn btn-info" %>
   </div>
 </div>
