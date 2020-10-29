@@ -35,3 +35,9 @@ User.create(name: "sample" ,
             password_confirmation: "09090909",
             admin: "false"
             )
+Label.create([
+            { name: "Self study" },
+            { name: "Class" },
+            { name: "Question" },
+            { name: "on hold" },
+            ])
