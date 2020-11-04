@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="view_title">
+    <h2>ラベル詳細画面</h2>
+  </div>
+    <div class="show_style">
+<p>ラベル名:<%= @label.name %></p>
+
+<%= link_to '編集', edit_label_path(@label), class: "btn btn-info" %>
+<br><br>
+<%= link_to 'ラベル一覧画面に戻る', labels_path, class: "btn btn-info" %>
+</div>
+</div>
